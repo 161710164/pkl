@@ -37,25 +37,28 @@ class GuruController extends Controller
     public function store(Request $request)
     {
             $this->validate($request,[
+            'foto' => 'required',
             'nama_guru' => 'required|',
             'nip' => 'required|',
-             'jabatan' => 'required|'
+            'jabatan' => 'required|'
         ]);
         $gurus = new Guru;
+        $gurus->foto = $request->foto;
         $gurus->nama_guru = $request->nama_guru;
         $gurus->nip = $request->nip;
         $gurus->jabatan = $request->jabatan;
         // upload foto
         if ($request->hasFile('foto')) {
             $file = $request->file('foto');
-            $destinationPath = public_path().'/assets/img/fotoguru';
+            $destinationPath = public_path() .DIRECTORY_SEPARATOR. 'assets/img';
             $filename = str_random(6).'_'.$file->getClientOriginalName();
             $uploadSuccess = $file->move($destinationPath, $filename);
             $gurus->foto = $filename;
         }
-        $gurus->save();
-        return redirect()->route('guru.index');
-    }
+            $gurus->save();
+            return redirect()->route('guru.index');
+        }
+    
 
 
 
@@ -105,16 +108,16 @@ class GuruController extends Controller
         $gurus->save();
         return redirect()->route('guru.index');
         // edit upload foto
-        if ($request->file('')) {
+        if ($request->file('foto')) {
             $file = $request->file('foto');
-            $destinationPath = public_path().'/assets/img/fotoguru';
+            $destinationPath = public_path().'/img';
             $filename = str_random(6).'_'.$file->getClientOriginalName();
             $uploadSuccess = $file->move($destinationPath, $filename);
 
             //hapus foto lama
             if ($gurus->foto) {
-                $old_foto = $siswa->foto;
-                $filepath = public_path() . DIRECTORY_SEPARATOR .'/assets/img/fotogu'. DIRECTORY_SEPARATOR . $gurus->foto;
+                $old_foto = $gurus->foto;
+                $filepath = public_path() . DIRECTORY_SEPARATOR .'/assets/admin/images/foto'. DIRECTORY_SEPARATOR . $gurus->foto;
                 try {
                     File::delete($filepath);
                 } catch (FileNotFoundException $e){

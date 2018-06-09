@@ -18,7 +18,6 @@
 					<th>Nama Kategori</th>
 					<th>Judul</th>
 					<th>Konten</th>
-					<th>Tanggal</th>
 					<th colspan="3">Action</th>
 				</tr>	
 	           </thead>
@@ -31,7 +30,6 @@
 							<td>{{$data->kategori->nama_kategori}}</td>
 							<td>{{$data->judul}}</td>
 							<td>{{$data->konten}}</td>
-							<td>{{$data->tanggal}}</td>
 							<td>
 		<a class="btn btn-primary" href=" {{ route('artikel.edit',$data->id)}} ">Ubah</a>
 	</td>

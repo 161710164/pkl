@@ -13,11 +13,12 @@
 				  <table class="table">
 				  	<thead>
 			  		<tr>
-			  		  <th>No</th>
-					  <th>Nama Guru</th>
-					  <th>nip</th>
-					  <th>Jabatan</th>
-					  <th colspan="3">Action</th>
+			  		<th>No</th>
+					<th>Foto</th>
+					<th>Nama Guru</th>
+					<th>nip</th>
+					<th>Jabatan</th>
+					<th colspan="3">Action</th>
 			  		</tr>
 				  	</thead>
 				  	<tbody>
@@ -25,7 +26,8 @@
 				  		@php $no = 1; @endphp
 				  		@foreach($gurus as $data)
 				  	  <tr>
-				    	<td>{{ $no++ }}</td>
+						<td>{{ $no++ }}</td>
+						<td><img src="{{ asset ('assets/img/'.$data->foto.'')}}" class="img-responsive"></td>
 				    	<td>{{ $data->nama_guru }}</td>
 				    	<td>{{ $data->nip }}</td>
 				    	<td>{{ $data->jabatan }}</td>

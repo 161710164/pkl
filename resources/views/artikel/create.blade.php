@@ -34,9 +34,9 @@
                             </span>
                         @endif
 			  		</div>
-
-			  		<div class="form-group {{ $errors->has('konten') ? ' has-error' : '' }}">
-			  			<label class="control-label">konten</label>	
+					
+			  		<div class="form-group {{ $errors->has('konten') ? ' has-error' : '' }}">	
+			  			<textarea class="ckeditor" id="ckedtor">konten</textarea>	
 			  			<input type="text" name="konten" class="form-control"  required>
 			  			@if ($errors->has('konten'))
                             <span class="help-block">
@@ -44,16 +44,6 @@
                             </span>
                         @endif
 			  		</div>
-
-			  		<div class="form-group {{$errors->has('tanggal') ? 'has-error' : ''}}">
-								<label class="control-label">Tanggal Update</label>
-								<input type="date" name="tanggal" class="form-control" required>
-								@if ($errors->has('tanggal'))
-									<span class="help-blocks">
-										<strong>{{$errors->first('tanggal')}}</strong>
-									</span>
-								@endif
-							</div>
 
 			  		<div class="form-group">
 			  			<button type="submit" class="btn btn-primary">Tambah</button>

@@ -11,6 +11,16 @@
 			  <div class="panel-body">
 			  	<form action="{{ route('guru.store') }}" method="post" enctype="multipart/form-data" >
 			  		{{ csrf_field() }}
+					<div class="form-group {{ $errors->has('foto') ? ' has-error' : '' }}">
+			  			<label class="control-label">Foto</label>	
+			  			<input type="file" name="foto" class="form-control" required>
+			  			@if ($errors->has('foto'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('foto') }}</strong>
+                            </span>
+                        @endif
+			  		</div>
+
 			  		<div class="form-group {{ $errors->has('nama_guru') ? ' has-error' : '' }}">
 			  			<label class="control-label">Nama Guru</label>	
 			  			<input type="text" name="nama_guru" class="form-control"  required>

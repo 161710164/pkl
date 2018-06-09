@@ -22,10 +22,6 @@
 			  			<label class="control-label">Konten</label>
 						<input type="text" name="title" class="form-control" value="{{ $artikels->konten }}"  readonly>
 			  		</div>
-			  		<div class="form-group">
-			  			<label class="control-label">Tanggal Update</label>
-						<input type="text" name="title" class="form-control" value="{{ $artikels->tanggal }}"  readonly>
-			  		</div>
 
 			  		</div>
 			  	</div>

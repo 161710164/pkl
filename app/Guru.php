@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Guru extends Model
 {
     protected $table='gurus';
-    protected $fillable=['nama_guru','nip','jabatan'];
+    protected $fillable=['foto','nama_guru','nip','jabatan'];
     public $timestamps=true;
 
     public function Ekskul()

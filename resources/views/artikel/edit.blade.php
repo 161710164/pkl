@@ -47,16 +47,6 @@
                         @endif
 			  		</div>
 
-			  		<div class="form-group {{$errors->has('tanggal') ? 'has-error' : ''}}">
-								<label class="control-label">Tanggal Update</label>
-								<input type="date" name="tanggal" class="form-control" value="{{$artikels->tanggal}}" required>
-								@if ($errors->has('tanggal'))
-									<span class="help-blocks">
-										<strong>{{$errors->first('tanggal')}}</strong>
-									</span>
-								@endif
-							</div>
-
 			  		<div class="form-group">
 			  			<button type="submit" class="btn btn-primary">Simpan</button>
 			  		</div>

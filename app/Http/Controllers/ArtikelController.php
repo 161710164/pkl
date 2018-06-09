@@ -42,14 +42,12 @@ class ArtikelController extends Controller
         $this->validate($request,[
             'kategori_id' => 'required|',
             'judul' => 'required|',
-            'konten' => 'required',
-            'tanggal' => 'required'
+            'konten' => 'required'
         ]);
         $artikels = new Artikel;
         $artikels->kategori_id = $request->kategori_id;
         $artikels->judul = $request->judul;
         $artikels->konten = $request->konten;
-        $artikels->tanggal = $request->tanggal;
         $artikels->save();
         return redirect()->route('artikel.index');
     }
@@ -92,14 +90,12 @@ class ArtikelController extends Controller
         $this->validate($request,[
             'kategori_id' => 'required|',
             'judul' => 'required|',
-            'konten' => 'required',
-            'tanggal' => 'required'
+            'konten' => 'required'
         ]);
         $artikels = Artikel::findOrFail($id);
         $artikels->kategori_id = $request->kategori_id;
         $artikels->judul = $request->judul;
         $artikels->konten = $request->konten;
-        $artikels->tanggal = $request->tanggal;
         $artikels->save();
         return redirect()->route('artikel.index');
     }

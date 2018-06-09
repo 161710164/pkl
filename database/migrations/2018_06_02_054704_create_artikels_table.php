@@ -19,7 +19,6 @@ class CreateArtikelsTable extends Migration
             $table->foreign('kategori_id')->references('id')->on('kategoris')->ondelete('cascade');
             $table->string('judul');
             $table->text('konten');
-            $table->date('tanggal');
             $table->timestamps();
         });
     }

@@ -92,7 +92,7 @@ class KategoriController extends Controller
      * @param  \App\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategori $id)
+    public function destroy($id)
     {
         $kategoris = Kategori::findOrFail($id);
         $kategoris->delete();
